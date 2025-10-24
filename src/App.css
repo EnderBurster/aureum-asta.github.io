@@ -10,7 +10,7 @@
 }
 
 .logo.header:hover {
-    filter: drop-shadow(0 0 1em rgba(119, 66, 250, 0.67));
+    filter: drop-shadow(0 0 0.5em rgba(119, 66, 250, 1.0));
 }
 
 .logo.header {
@@ -38,10 +38,47 @@
     flex-direction: row;
 }
 
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8%;
+    margin: 0;
+}
+
 .App-content {
-    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     text-align: center;
-    min-height: 50vh;
+    justify-content: center;
+    gap: 10rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;
+    overflow: hidden;
+    min-height: 80vh;
+
+    width: 100%;
+    max-width: 2200px;
+}
+
+.server-screenshot {
+    flex: 0 0 auto;
+    max-width: 800px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-right: auto;
+}
+
+.server-screenshot img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    display: block;
 }
 
 .App-content.purple{
@@ -64,10 +101,15 @@
 }
 
 .card {
-  padding: 2em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2em;
 }
 
-.read-the-docs {
+.subscript {
   color: #888;
 }
 
@@ -92,8 +134,12 @@
     transition: filter 300ms;
 }
 
-.hamburger:hover {
-    filter: drop-shadow(0 0 1em rgba(119, 66, 250, 2.0));
+.hamburger:hover span:nth-child(2) {
+    filter: drop-shadow(0 0 0.5em rgba(119, 66, 250, 1.0)) drop-shadow(0 0 0.5em rgba(119, 66, 250, 1.0)) drop-shadow(0 0 0.5em rgba(119, 66, 250, 1.0));
+}
+
+.hamburger.open:hover span:nth-child(1) {
+    filter: drop-shadow(0 0 0.5em rgba(119, 66, 250, 1.0)) drop-shadow(0 0 0.5em rgba(119, 66, 250, 1.0)) drop-shadow(0 0 0.5em rgba(119, 66, 250, 1.0));
 }
 
 .hamburger span {
