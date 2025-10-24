@@ -41,11 +41,11 @@
 .App-content {
     padding: 2rem;
     text-align: center;
+    min-height: 50vh;
 }
 
-.documentation{
+.App-content.purple{
     background-color: #5727a6;
-    min-height: 50vh;
 }
 
 @keyframes logo-spin {

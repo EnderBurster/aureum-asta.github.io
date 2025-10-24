@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import astaLogo from '/icon_transparent.png'
 import './App.css'
+import { motion } from "framer-motion";
 
 function App() {
 
@@ -14,6 +15,19 @@ function App() {
             setMenuOpen(false);
         }
     };
+
+    function FadeInWhenVisible({ children }) {
+        return (
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+            >
+                {children}
+            </motion.div>
+        );
+    }
 
   return (
       <>
@@ -42,11 +56,15 @@ function App() {
               </div>
           </header>
           <div className="App-content" id="app-content">
+              <FadeInWhenVisible>
               <div>
                   <a href="https://github.com/EnderBurster/Aureum-Asta-Discs" target="_blank">
                       <img src={astaLogo} className="logo" alt="Aureum Asta Logo" />
                   </a>
               </div>
+              </FadeInWhenVisible>
+
+              <FadeInWhenVisible>
               <h1>Aureum Asta</h1>
               <div className="card">
                   <button onClick={() => setCount((count) => count + 1)}>
@@ -59,36 +77,48 @@ function App() {
               <p className="read-the-docs">
                   Click on the Aureum Asta logo to be transported to the github.
               </p>
+              </FadeInWhenVisible>
           </div>
 
-          <div className="documentation" id="app-middle">
+
+          <div className="App-content purple" id="app-middle">
+              <FadeInWhenVisible>
               <div className="App-content">
                   <p>Here will go the documentation of Aureum Asta Discs.</p>
                   <p>And here.</p>
                   <p>And here.</p>
                   <p>And finally, here.</p>
               </div>
+              </FadeInWhenVisible>
           </div>
 
-          <div className="App-content" id="app-bottom">
-              <div>
-                  <a href="https://github.com/EnderBurster/Aureum-Asta-Discs" target="_blank">
-                      <img src={astaLogo} className="logo" alt="Aureum Asta Logo" />
-                  </a>
-              </div>
-              <h1>Aureum Asta</h1>
-              <p className="read-the-docs">
-                  Click on the Aureum Asta logo to be transported to the github.
-              </p>
+          <div className="App-content" id="app-content">
+              <FadeInWhenVisible>
+                  <div>
+                      <a href="https://github.com/EnderBurster/Aureum-Asta-Discs" target="_blank">
+                          <img src={astaLogo} className="logo" alt="Aureum Asta Logo" />
+                      </a>
+                  </div>
+              </FadeInWhenVisible>
+
+              <FadeInWhenVisible>
+                  <h1>Aureum Asta</h1>
+                  <p className="read-the-docs">
+                      Click on the Aureum Asta logo to be transported to the github.
+                  </p>
+              </FadeInWhenVisible>
           </div>
 
-          <div className="documentation">
-              <div className="App-content">
-                  <p>Here will go the documentation of Aureum Asta Discs.</p>
-                  <p>And here.</p>
-                  <p>And here.</p>
-                  <p>And finally, here.</p>
-              </div>
+
+          <div className="App-content purple" id="app-middle">
+              <FadeInWhenVisible>
+                  <div className="App-content">
+                      <p>Here will go the documentation of Aureum Asta Discs.</p>
+                      <p>And here.</p>
+                      <p>And here.</p>
+                      <p>And finally, here.</p>
+                  </div>
+              </FadeInWhenVisible>
           </div>
     </>
   )
