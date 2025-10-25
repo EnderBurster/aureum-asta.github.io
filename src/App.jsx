@@ -3,6 +3,7 @@ import astaLogo from '/icon_transparent.png'
 import serverSS from './assets/background.png'
 import './App.css'
 import { motion } from "framer-motion";
+import SpiralModsSection from "./scroll_animations/SpiralModSection.jsx";
 
 function FadeInWhenVisible({ children }) {
     return (
@@ -96,7 +97,7 @@ function App() {
                               </a>
                           </div>
                           <h1>Aureum Asta</h1>
-                          <p>Fortune favours the bold.</p>
+                          <p>Let thy ambitions run wild.</p>
                           <div className="card">
                               <button onClick={() => setCount((count) => count + 1)}>
                                   Join the Server
@@ -118,6 +119,8 @@ function App() {
                   </FadeInWhenVisible>
               </div>
 
+              <SpiralModsSection/>
+              {/*<ScrollAnimationSection/>*/}
 
               <div className="App-content purple" id="app-middle">
                   <FadeInWhenVisible>
@@ -153,14 +156,11 @@ function App() {
                   </FadeInWhenVisible>
               </div>
 
-
               <div className="App-content purple" id="app-bottom">
                   <FadeInWhenVisible>
                       <div>
-                          <p>Here will go the documentation of Aureum Asta Discs.</p>
-                          <p>And here.</p>
-                          <p>And here.</p>
-                          <p>And finally, here.</p>
+                          <p>Map of spawn (if it's not loading, the server is offline)</p>
+                          <iframe src="http://aureum-asta.serveminecraft.net:8100" height="1000" width="1400" title="map"></iframe>
                       </div>
                   </FadeInWhenVisible>
               </div>
