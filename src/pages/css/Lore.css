@@ -1,0 +1,30 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8%;
+    margin: 0;
+}
+
+.App-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 10rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;
+    overflow: hidden;
+    min-height: 80vh;
+
+    width: 100%;
+    max-width: 2200px;
+}
+
+.App-content.purple{
+    background-color: #5727a6;
+}

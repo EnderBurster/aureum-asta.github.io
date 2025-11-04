@@ -8,8 +8,8 @@ function ModItem({ mod, index, total, progress }) {
     const y = useTransform(radius, (r) => r * Math.sin(angle));
 
     // fade + scale appear sequentially
-    const start = index * 0.08;
-    const end = start + 0.08;
+    const start = index * 0.14;
+    const end = start + 0.14;
     const opacity = useTransform(progress, [start, end], [0, 1]);
     const scale = useTransform(progress, [start, end], [0.5, 1]);
 
@@ -52,12 +52,12 @@ export default function SpiralModsSection() {
     const clampedProgress = useTransform(scrollYProgress, [0, 0.75], [0, 1]);
 
     const mods = [
-        { name: "Aureum Asta", img: "public/mods/asta.png" },
-        { name: "Amarite", img: "public/mods/amarite.png" },
-        { name: "Blast", img: "public/mods/blast.png" },
-        { name: "Enchancement", img: "public/mods/enchancement.png" },
-        { name: "Supplementaries", img: "public/mods/supplementaries.png" },
-        { name: "Farmer's Delight", img: "public/mods/farmer.png" }
+        { name: "Aureum Asta", img: "mods/asta.png" },
+        { name: "Amarite", img: "mods/amarite.png" },
+        { name: "Blast", img: "mods/blast.png" },
+        { name: "Enchancement", img: "mods/enchancement.png" },
+        { name: "Supplementaries", img: "mods/supplementaries.png" },
+        { name: "Farmer's Delight", img: "mods/farmer.png" }
     ];
 
     const rotate = useTransform(clampedProgress, [0, 1], [0, 360]);
